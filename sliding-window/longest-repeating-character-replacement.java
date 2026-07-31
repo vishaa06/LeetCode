@@ -6,7 +6,7 @@ class Solution {
         {
             freq[s.charAt(r)-65]++;
             maxfreq=Math.max(maxfreq,freq[s.charAt(r)-65]);
-            while((r-l+1)-maxfreq>k)
+            if((r-l+1)-maxfreq>k)
             {
                 freq[s.charAt(l)-65]--;
                 l++;
