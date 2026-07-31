@@ -1,20 +1,21 @@
 class Solution {
     public int countSubstrings(String s) {
-        int freq=0;
-        String temp;
-        
-        for(int i=0;i<s.length();i++)
-        {
-            
-            temp="";
-            for(int j=i;j<s.length();j++)
-            {
-                temp=temp+s.charAt(j);
-                StringBuilder rev=new StringBuilder(temp).reverse().toString();
-                if(temp.equals(rev))
-                    freq++;
+        int count = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            String temp = "";
+
+            for (int j = i; j < s.length(); j++) {
+                temp = temp + s.charAt(j);
+
+                String rev = new StringBuilder(temp).reverse().toString();
+
+                if (temp.equals(rev)) {
+                    count++;
+                }
             }
         }
-        return freq;
+
+        return count;
     }
 }
